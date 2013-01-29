@@ -20,7 +20,10 @@ if($_POST['band_name'] != '' && $_POST['band_genre'] != '' && $_POST['band_numal
 	$_SESSION['POST'] = $_POST;
 	
 	// Store error message in session data
-	$_SESSION['message'] = 'Please enter all required information';
+	$_SESSION['message'] = array(
+			'text' => 'Please enter all required information',
+			'type' => 'error'
+	);
 	
 	// Redirect to the form
 	header('Location:../?p=form_add_band');
